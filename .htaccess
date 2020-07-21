@@ -1,0 +1,18 @@
+RewriteEngine on
+
+RewriteRule ^index\.mu$ index.php?view=home
+RewriteRule ^hal-index-(.*)\.mu$ index.php?view=home&halutama=$1 [L]
+RewriteRule ^pendaftaran\.mu$ index.php?view=pendaftaran&id=$1 [L]
+RewriteRule ^login\.mu$ index.php?view=login&id=$1 [L]
+RewriteRule ^detail-journal-(.*)\.mu$ index.php?view=detail&journal=$1 [L]
+RewriteRule ^penelitian-(.*)\.mu$ index.php?view=metodologi_penelitian&kat=$1 [L]
+RewriteRule ^hal-journal-(.*)-([0-9]+)\.mu$ index.php?view=metodologi_penelitian&kat=$1&halkat=$2 [L]
+RewriteRule ^my-journal\.mu$ index.php?view=myjournal&id=$1 [L]
+RewriteRule ^implementasi\.mdn$ index.php?view=implementasi&id=$1 [L]
+RewriteRule ^list-implementasi\.mdn$ index.php?view=implementasirev&id=$1 [L]
+RewriteRule ^evaluasi\.mdn$ index.php?view=evaluasi&id=$1 [L]
+RewriteRule ^list-journal\.mu$ index.php?view=listjournal&id=$1 [L]
+RewriteRule ^editor-list-journal\.mu$ index.php?view=listjournaleditor&id=$1 [L]
+RewriteRule ^implementasi-editor\.mdn$ index.php?view=implementasieditor&id=$1 [L]
+RewriteRule ^evaluasi-editor\.mdn$ index.php?view=evaluasieditor&id=$1 [L]
+RewriteRule ^account\.mu$ index.php?view=account&id=$1 [L]
