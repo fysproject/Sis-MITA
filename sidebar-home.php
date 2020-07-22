@@ -3,7 +3,7 @@
 				<div class="col-lg-12">
 					<form action='index.mu' method='POST'>
 						<div class="input-group">
-						<input type="text" name='cari' class="form-control" placeholder="Search Research">
+						<input type="text" name='cari' class="form-control" placeholder="Search">
 						<span class="input-group-btn"><button class="btn btn-success" type="button">Search</button></span>
 						</div><!-- /input-group -->
 					</form>
