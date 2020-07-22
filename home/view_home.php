@@ -6,7 +6,7 @@
 			if (isset($_POST[cari])){
 				echo "Hasil Pencarian Penelitian dengan Keyword <strong>'$_POST[cari]'</strong>";
 			}else{
-				echo "Datfar Penelitian yang telah Diterbitkan";
+				echo "Daftar Penelitian yang telah Diterbitkan";
 			}
 		?>
 	    </div>
