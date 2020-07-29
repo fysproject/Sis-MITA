@@ -44,17 +44,17 @@ include "config/class_paging.php";
   <div class="container">
     <?php 
       if (isset($_SESSION[admin])){  
-        echo "<img style='width:100%; margin-top:20px' src='asset/images/header1.png' />
+        echo "<img style='width:100%; margin-top:-20px' src='asset/images/cover.png' />
               <nav class='navbar navbar-inverse'>";
       }else{
-        echo "<img style='width:100%; margin-top:20px' src='asset/images/header1.png' />
-              <nav class='navbar navbar-inverse'>";
+        echo "<img style='width:100%; margin-top:-20px' src='asset/images/cover.png' />
+              <nav class='navbar navbar-default'>";
       }
     ?>
       
         <div class="container-fluid">
-          <div class="navbar-header>
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -91,14 +91,13 @@ include "config/class_paging.php";
   </footer>
 <?php }else{ ?>
   <footer style="background:#0000CD; border-top:3px solid #778899; padding:15px">
-          <div class="container">
-              <div class="row">
+          
+              
                       <strong><p class="footer" style="text-align:center; color:#FFF">
                         Copyright © 2019 Sistem Informasi Penjaminan Mutu Penelitian (Sis-Mita)<br>
                         BBPSDMP Kominfo Medan
                       </p></strong>
-              </div>
-          </div>
+              
   </footer>
 <?php } ?>
 

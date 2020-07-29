@@ -1,6 +1,6 @@
 <?php 
-if ($_SESSION['level']=='dosen'){
-  $data = mysql_fetch_array(mysql_query("SELECT * FROM tbl_dosen where id_dosen='$_SESSION[id]'"));
+if ($_SESSION['user']=='researcher'){
+  $data = mysql_fetch_array(mysql_query("SELECT * FROM tbl_dosen where id_dosen='$_SESSION[id]' AND unama='$_SESSION[unama]'"));
   $pecah = explode(' ',$data[nama]);
   $nama = $pecah[0].' '.$pecah[1];
 }else{
@@ -30,12 +30,12 @@ if ($_SESSION['id']==''){
               <ul class="nav navbar-nav navbar-right">
                   <form class="navbar-form navbar-left" role="search" action='index.mu' method='POST'>
                     <div class="form-group">
-                      <input type="text" name='cari' class="form-control cari" placeholder="Search Research">
+                      <input type="text" name='cari' class="form-control cari" placeholder="Search">
                     </div>
                     <button type="submit" class="btn btn-default">Search</button>
                   </form>
               </ul>
-<?php }elseif ($_SESSION['level']=='dosen'){ ?>
+<?php }elseif ($_SESSION['user']=='researcher'){ ?>
               <ul class="nav navbar-nav">
                 <li><a href="index.mu"><i class="glyphicon glyphicon-home"></i> Home Page</a></li>
                 <li><a href='my-journal.mu'><i class="glyphicon glyphicon-file"></i> Planning</a></li>
@@ -44,7 +44,7 @@ if ($_SESSION['id']==''){
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                  <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Welcome ! <b style='color:white'><?php echo $nama; ?></b> <span class="caret"></span></a>
+                  <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Welcome ! <b style='color:black'><?php echo $nama; ?></b> <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href='account.mu'>Setting Account</a></li>
                         <li><a href='logout.php'>Logout</a></li>
@@ -61,7 +61,7 @@ if ($_SESSION['id']==''){
 
               <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                  <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Welcome ! <b style='color:white'><?php echo $nama; ?></b> <span class="caret"></span></a>
+                  <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Welcome ! <b style='color:black'><?php echo $nama; ?></b> <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href='account.mu'>Setting Account</a></li>
                         <li><a href='logout.php'>Logout</a></li>
@@ -79,7 +79,7 @@ if ($_SESSION['id']==''){
 
               <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                  <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Welcome ! <b style='color:white'><?php echo $nama; ?></b> <span class="caret"></span></a>
+                  <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Welcome ! <b style='color:black'><?php echo $nama; ?></b> <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href='account.mu'>Setting Account</a></li>
                         <li><a href='logout.php'>Logout</a></li>

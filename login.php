@@ -1,13 +1,14 @@
 <?php 
 if (isset($_POST[login])){
 	$password = md5($_POST[b]);
-	if ($_POST[level]=='dosen'){
+	if ($_POST[user]=='researcher'){
 		$query = mysql_query("SELECT * FROM tbl_dosen where unama='$_POST[a]' AND password='$password' AND akses='Aktif'");
 		$hitung = mysql_num_rows($query);
 		$r = mysql_fetch_array($query);
 		if ($hitung >= 1){
 			$_SESSION['id'] = $r['id_dosen'];
-			$_SESSION['level'] = 'dosen';
+			$_SESSION['nama'] = $r['unama'];
+			$_SESSION['user'] = 'researcher';
 			header('Location:index.php');
 		}else{
 			echo "<div class='alert alert-danger'><center>Maaf, Username dan Password anda Salah <br> atau Mungkin akun anda Belum di aktifkan...!!!</center></div>";
@@ -20,6 +21,13 @@ if (isset($_POST[login])){
 			$_SESSION['id'] = $r['id_users'];
 			$_SESSION['level'] = $r['level'];
 			header('Location:index.php');
+
+			if ($_SESSION['level'] == "reviewer") {
+				$_SESSION['SES_REVIEWER']== "reviewer";
+
+			}if ($_SESSION['level'] == "editor") {
+				$_SESSION['SES_EDITOR']== "editor";
+			}
 		}else{
 			echo "<div class='alert alert-danger'><center>Maaf, Username dan Password anda Salah...!!!</center></div>";
 		}
@@ -33,20 +41,7 @@ if (isset($_POST[login])){
 					<strong>Form Login</strong>
 				</div>
 						<form action='' method='POST' class='form-horizontal' role='form'>
-							  
-							  <div class='form-group'>
-							  	<label for='inputEmail3' class='col-sm-3 control-label'>Level</label>
-								<div class='input-group col-lg-9'>
-								  	<div class='col-xs-5'><select class='form-control' id='inputPassword3' name='level'>
-								  							<option value='0' selected>Pilih</option>
-								  							<option value='dosen'>Researcher</option>
-								  							<option value='reviewer'>Reviewer</option>
-								  							<option value='editor'>Editor</option>
-								  						  </select></div>
-								</div>
-							  </div>
-
-							  <div class='form-group'>
+							 <div class='form-group'>
 								<label for='inputEmail3' class='col-sm-3 control-label'>Username</label>
 								<div class='input-group col-lg-9'>
 								  	<div class='col-xs-8'><input type='text' class='form-control' id='inputPassword3' name='a' placeholder='Masukkan Username' required></div>
